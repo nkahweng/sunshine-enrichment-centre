@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #f9f9f9;
+}
+
+
+/* 
+
+Animation Logic - Scroll Triggered Animation
+
+1. Container ref scope the search to a section, 
+
+2. In useEffect -> 
+- observer is created on mount with threshold rule
+- attach observer to .animate-on-scroll class (watch them)
+- if they > threshold, observer add the is-visible class
+ 
+3. Each animating component will have their animation class like animation-fade-up, animation-slide-right
+only with combination of animation classes and is-visible the keyframe is triggered (.animation-class.is-visible)
+
+4. DRY by using hook, the hook will create new containerRef and observer when the hook is called when a component mounts 
+(other components apart from impact & benefits)
+*/
+
+
+.animate-on-scroll {
+    opacity: 0;
+    animation-play-state: paused;
+}
+
+.anim-delay-200 {
+  animation-delay: 200ms;
+}
+
+/* Fade Up Animation */
+
+.animate-fade-up.is-visible {
+    animation: fade-up 0.8s ease-out forwards;
+    animation-play-state: running;
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(32px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+}
+
+/* Slide Right Animation */
+
+.animate-slide-right.is-visible {
+    animation: slide-right 0.8s ease-out forwards;
+    animation-play-state: running;
+}
+
+@keyframes slide-right {  
+    from {
+        opacity: 0;
+        transform: translateX(-96px);
+    } 
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-pop-up.is-visible {
+    animation: pop-up 0.8s ease-out forwards;
+}
+
+@keyframes pop-up {
+    from {
+        opacity: 0;
+        scale: 0; 
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
