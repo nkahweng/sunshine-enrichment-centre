@@ -5,7 +5,7 @@ import CTAButton from "./CTAButton";
 
 const CTA = () => {
   return (
-    <section className="bg-[#FFF8EF] py-20 px-6 font-montserrat">
+    <section className="bg-[#FFF8EF] pb-20 px-6 font-montserrat">
       <div className="max-w-5xl mx-auto">
         <div className="relative rounded-3xl shadow-2xl h-[420px] overflow-hidden">
           <img

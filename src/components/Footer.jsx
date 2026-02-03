@@ -7,7 +7,7 @@ import { FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa";
 const Footer = () => {
   return (
     <section className="bg-darkblue font-montserrat text-white">
-      <div className="container grid md:grid-cols-4 gap-10 py-14">
+      <footer className="container grid md:grid-cols-4 gap-10 py-14">
         {/* Brand */}
         <div className="md:col-span-2">
           <img
@@ -93,7 +93,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </footer>
     </section>
   );
 };

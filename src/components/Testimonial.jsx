@@ -1,13 +1,28 @@
-import { Quote, Star } from "lucide-react";
-import React, { useEffect, useRef } from "react";
+import { useState } from "react";
 import { testimonials } from "../constants";
 import { useScrollObserver } from "../hooks/useScrollObserver";
+import TestimonialCard from "./TestimonialCard";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Testimonial = () => {
   const containerRef = useScrollObserver();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 1024;
+  const maxIndex = isMobile ? testimonials.length - 1 : testimonials.length - 2;
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1));
+  };
 
   return (
-    <section ref={containerRef} className="bg-[#FFF8EF] py-20 relative">
+    <section
+      ref={containerRef}
+      className="bg-[#FFF8EF] py-12 md:py-20 relative lg:px-16"
+    >
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-64 right-0 w-64 h-64 bg-yellow/10 rounded-full blur-3xl -mr-32 -mt-32" />
       </div>
@@ -26,47 +41,57 @@ const Testimonial = () => {
           </p>
         </div>
 
+        {/* Mobile-only dots or small buttons below (optional) */}
+        <div className="flex md:hidden w-full justify-between gap-4 px-8">
+          <button
+            disabled={currentIndex === 0}
+            onClick={prevSlide}
+            className={`${currentIndex === 0 ? "opacity-30 cursor-not-allowed" : "opacity-100"} font-bold p-3 rounded-full bg-white shadow-lg hover:bg-orange hover:text-white transition-all items-center justify-center border border-gray-100`}
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button
+            disabled={currentIndex === maxIndex}
+            onClick={nextSlide}
+            className={`${currentIndex === maxIndex ? "opacity-30 cursor-not-allowed" : "opacity-100"} font-bold p-3 rounded-full bg-white shadow-lg hover:bg-orange hover:text-white transition-all items-center justify-center border border-gray-100`}
+          >
+            <ChevronRight size={24} />
+          </button>
+        </div>
         {/* Testimonial Slider */}
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-16 max-w-6xl mx-auto">
-          {testimonials.map((testimonial, index) => (
+        <div className="relative w-full max-w-6xl mx-auto">
+          <button
+            disabled={currentIndex === 0}
+            onClick={prevSlide}
+            className={`${currentIndex === 0 ? "opacity-30 cursor-not-allowed" : "opacity-100"} absolute left-0 lg:-left-12 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white shadow-lg hover:bg-orange hover:text-white transition-all hidden md:flex items-center justify-center border border-gray-100`}
+          >
+            <ChevronLeft size={24} />
+          </button>
+
+          <button
+            disabled={currentIndex === maxIndex}
+            onClick={nextSlide}
+            className={`${currentIndex === maxIndex ? "opacity-30 cursor-not-allowed" : "opacity-100"} absolute right-0 lg:-right-12 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white shadow-lg hover:bg-orange hover:text-white transition-all hidden md:flex items-center justify-center border border-gray-100`}
+          >
+            <ChevronRight size={24} />
+          </button>
+          <div className="overflow-hidden px-2">
             <div
-              key={index}
-              className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-500 p-8 lg:p-12 relative animate-on-scroll animate-fade-up delay-400"
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{
+                transform: `translateX(-${currentIndex * (isMobile ? 100 : 50)}%)`,
+              }}
             >
-              <div className="relative z-10">
-                {/* 5 Stars for Trust */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={16}
-                      className="fill-orange text-orange"
-                    />
-                  ))}
-                </div>
-
-                {/* Testimonial Text */}
-                <p className="text-gray-700 italic leading-relaxed mb-8 text-md">
-                  {testimonial.description}
-                </p>
-
-                {/* Parent Info */}
-                <div className="flex items-center gap-4 border-t border-gray-200 pt-6">
-                  <div className="w-12 h-12 bg-darkblue rounded-full flex items-center justify-center text-white font-bold text-lg font-leagueSpartan">
-                    {testimonial.name.charAt(0)}
-                  </div>
-                  <div>
-                    <h5 className="text-darkblue font-bold text-lg leading-none mb-1">
-                      {testimonial.name}
-                    </h5>
-                    <p className="text-orange text-sm font-medium">
-                      Parent of {testimonial.class} student
-                    </p>
-                  </div>
-                </div>
-              </div>
+              {testimonials.map((t, index) => (
+                // Card
+                <TestimonialCard
+                  name={t.name}
+                  description={t.description}
+                  classes={t.class}
+                />
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

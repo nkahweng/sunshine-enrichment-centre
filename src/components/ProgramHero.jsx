@@ -19,9 +19,11 @@ const ProgramHero = ({
           {years}
         </div>
 
-        <h1 className="text-4xl md:text-5xl font-semibold font-leagueSpartan mb-4">
-          {title}
-        </h1>
+        <title>
+          <h1 className="text-4xl md:text-5xl font-semibold font-leagueSpartan mb-4">
+            {title}
+          </h1>
+        </title>
         <p className="text-white/90 text-base md:text-lg max-w-xl">{desc} </p>
       </div>
     </section>

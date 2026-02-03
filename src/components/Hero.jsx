@@ -18,14 +18,14 @@ const Hero = () => {
         backgroundImage: `url(${trip6})`,
       }}
     >
-      <div className="absolute inset-0 bg-darkblue opacity-90 pr-[100px] z-5" />
+      <div className="absolute inset-0 bg-darkblue opacity-90 lg:pr-[100px] z-5" />
 
       <div className="max-w-wide mx-auto px-6 z-10 w-full mt-32 lg:mt-0">
         <div className="grid lg:grid-cols-5 gap-12 items-center">
           <div className="lg:col-span-3 flex flex-col justify-center text-left relative">
             {/* Main Headline */}
             <h1 className="font-leagueSpartan font-bold text-white tracking-tight mb-6 animate-on-scroll animate-slide-right">
-              <span className="text-7xl md:text-8xl text-orange drop-shadow-md relative pr-8 pt-4">
+              <span className="text-5xl md:text-7xl lg:text-8xl text-orange drop-shadow-md relative pr-8 pt-4">
                 <Sun className="absolute top-0 right-0 text-yellow h-12 w-12" />
                 SUNSHINE
               </span>
@@ -56,6 +56,7 @@ const Hero = () => {
               <img
                 src={group}
                 alt="Sunshine Enrichment Centre Staff Group Photo"
+                className="sm:max-w-md lg:max-w-lg mx-auto"
               />
             </div>
           </div>
