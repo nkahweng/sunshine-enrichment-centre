@@ -1,6 +1,6 @@
 import React from "react";
 import { MessageCircle, Sun } from "lucide-react";
-import { group, trip6 } from "../assets";
+import { group, heroBg, heroBoyGirl, trip6 } from "../assets";
 import CTAButton from "./CTAButton";
 import { useScrollObserver } from "../hooks/useScrollObserver";
 
@@ -15,22 +15,27 @@ const Hero = () => {
       ref={containerRef}
       className="relative min-h-screen flex items-center overflow-hidden bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
       style={{
-        backgroundImage: `url(${trip6})`,
+        backgroundImage: `url(${heroBg})`,
       }}
     >
-      <div className="absolute inset-0 bg-darkblue opacity-90 lg:pr-[100px] z-5" />
+      {/* <div className="absolute inset-0 bg-darkblue opacity-90 lg:pr-[100px] z-5" /> */}
+      <div className="absolute inset-0 bg-black opacity-40 lg:pr-[100px] z-5" />
 
       <div className="max-w-wide mx-auto px-6 z-10 w-full mt-32 lg:mt-0">
-        <div className="grid lg:grid-cols-5 gap-12 items-center">
-          <div className="lg:col-span-3 flex flex-col justify-center text-left relative">
+        <div className="grid lg:grid-cols-5 gap-12">
+          <div className="lg:col-span-5 flex flex-col justify-center relative lg:pl-32">
             {/* Main Headline */}
             <h1 className="font-leagueSpartan font-bold text-white tracking-tight mb-6 animate-on-scroll animate-slide-right">
-              <span className="text-5xl md:text-7xl lg:text-8xl text-orange drop-shadow-md relative pr-8 pt-4">
-                <Sun className="absolute top-0 right-0 text-yellow h-12 w-12" />
+              <span className="text-5xl md:text-7xl lg:text-9xl text-orange drop-shadow-md relative pr-8 pt-4">
+                {/* <Sun className="absolute top-0 right-0 text-yellow h-12 w-12" /> */}
                 SUNSHINE
               </span>
-              <span className="block text-4xl md:text-5xl lg:text-6xl leading-none text-white/90">
+              <span className="inline-block text-4xl md:text-5xl lg:text-7xl leading-none text-white/90 relative">
                 ENRICHMENT CENTRE
+                <img
+                  src={heroBoyGirl}
+                  className="absolute -right-12 -top-12 w-24"
+                />
               </span>
             </h1>
 
@@ -45,13 +50,13 @@ const Hero = () => {
               <CTAButton
                 text="Chat With Us on WhatsApp"
                 icon={<MessageCircle size={18} />}
-                // className="border border-white"
+                className="bg-none font-normal border-b hover:text-orange hover:border-orange"
               />
             </div>
           </div>
 
           {/* Photo */}
-          <div className="lg:col-span-2 relative">
+          {/* <div className="lg:col-span-2 relative">
             <div className="relative z-10 animate-on-scroll animate-pop-up">
               <img
                 src={group}
@@ -59,12 +64,12 @@ const Hero = () => {
                 className="sm:max-w-md lg:max-w-lg mx-auto"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
       {/* Wave */}
-      <div className="absolute bottom-0 right-0 left-0 z-0">
+      {/* <div className="absolute bottom-0 right-0 left-0 z-0">
         <svg
           width="1920"
           height="144"
@@ -79,7 +84,7 @@ const Hero = () => {
             fill="#F9F9F9"
           />
         </svg>
-      </div>
+      </div> */}
     </section>
   );
 };

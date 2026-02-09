@@ -37,6 +37,7 @@ import msLim from "./Ms. Lim.jpg";
 import introVideo from "./SECEdu Website Video.mp4";
 
 import heroBg from "./SECEdu Background.png";
+import heroBoyGirl from "./SECEdu_Boy_Girl.png";
 
 export {
   headerLogo,
@@ -65,5 +66,6 @@ export {
   mrChew,
   introVideo,
   heroBg,
+  heroBoyGirl,
 };
 export { FacebookIcon, instagram, whatsapp, xhs };
