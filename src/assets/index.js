@@ -1,23 +1,19 @@
 import headerLogo from "./logo.png";
+import footerLogo from "./SECEdu_ Logo.png";
 import groupPhoto from "./groupPhoto.jpg";
-import avatar from "./avatar.png";
-import cta from "./cta.jpg";
-import kw from "./kw.JPG";
-import jc from "./jc.jpg";
-import rf from "./rf.JPG";
 import group from "./group.png";
 
 import children from "./children.jpg";
 import children2 from "./children2.jpg";
-import learning from "./learning.jpg";
-import strengthening from "./strengthening.jpg";
-import artcraft from "./artcraft.jpg";
+import learning from "./Learning Class.png";
+import strengthening from "./Strengthening Class.png";
+import artcraft from "./Art and Craft.png";
 import artcraft2 from "./artcraft2.jpg";
 
-import picturebook from "./picturebook.jpg";
+import picturebook from "./Picture Book.png";
 import picturebook2 from "./picturebook2.jpg";
 
-import robotics from "./robotics.jpg";
+import robotics from "./Robotics.png";
 import robotics2 from "./robotics2.jpg";
 import robotics3 from "./robotics3.jpg";
 
@@ -33,15 +29,19 @@ import student from "./student.png";
 import FacebookIcon from "./icons/facebook.svg?react";
 import instagram from "./icons/instagram.svg";
 import whatsapp from "./icons/whatsapp.svg";
+import xhs from "./xhs_logo.png";
+
+import mrChew from "./Mr. Chew.jpg";
+import msLim from "./Ms. Lim.jpg";
+
+import introVideo from "./SECEdu Website Video.mp4";
+
+import heroBg from "./SECEdu Background.png";
 
 export {
   headerLogo,
+  footerLogo,
   groupPhoto,
-  avatar,
-  cta,
-  kw,
-  jc,
-  rf,
   group,
   children,
   children2,
@@ -61,5 +61,9 @@ export {
   trip5,
   trip6,
   student,
+  msLim,
+  mrChew,
+  introVideo,
+  heroBg,
 };
-export { FacebookIcon, instagram, whatsapp };
+export { FacebookIcon, instagram, whatsapp, xhs };

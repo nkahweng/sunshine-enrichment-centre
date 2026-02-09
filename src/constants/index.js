@@ -6,9 +6,8 @@ import {
   Bot,
 } from "lucide-react";
 import {
-  kw,
-  rf,
-  jc,
+  msLim,
+  mrChew,
   learning,
   strengthening,
   artcraft,
@@ -155,7 +154,7 @@ export const managements = [
     position: "Founder, SECEdu",
     description:
       '"I believe that learning should be a fun and engaging experience that inspires children to question, explore and discover."',
-    imagePath: jc,
+    imagePath: msLim,
     alt: "Ms. Lim - Founder of SECEdu",
   },
   {
@@ -163,17 +162,17 @@ export const managements = [
     position: "Founder, SECEdu",
     description:
       '"Each child is unique, and I will have the highest expectations for each child so that they will have the confidence to be their best self."',
-    imagePath: rf,
+    imagePath: mrChew,
     alt: "Mr. Chew - Founder of SECEdu ",
   },
-  {
-    name: "Ms. Wong",
-    position: "Head of centre",
-    description:
-      '"Education is not just about imparting knowledge; it’s about lighting the fire of curiosity and guiding each child to discover their unique potential."',
-    imagePath: kw,
-    alt: "Ms. Wong - Head of Centre of SECEdu",
-  },
+  // {
+  //   name: "Ms. Wong",
+  //   position: "Head of centre",
+  //   description:
+  //     '"Education is not just about imparting knowledge; it’s about lighting the fire of curiosity and guiding each child to discover their unique potential."',
+  //   imagePath: kw,
+  //   alt: "Ms. Wong - Head of Centre of SECEdu",
+  // },
 ];
 
 export const subjects = [

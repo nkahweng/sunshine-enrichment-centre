@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { avatar, student } from "../assets";
+import { student } from "../assets";
 import CTAButton from "./CTAButton";
 import Stats from "./Stats";
 

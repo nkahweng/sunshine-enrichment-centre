@@ -1,17 +1,18 @@
 import React from "react";
-import { headerLogo, instagram } from "../assets";
+import { footerLogo, xhs } from "../assets";
 import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa";
+import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
   return (
     <section className="bg-darkblue font-montserrat text-white">
-      <footer className="container grid md:grid-cols-4 gap-10 py-14">
+      <footer className="container grid lg:grid-cols-4 gap-10 py-14">
         {/* Brand */}
         <div className="md:col-span-2">
           <img
-            src={headerLogo}
+            src={footerLogo}
             alt="Sunshine Enrichment Centre Logo"
             className="w-14 h-14 mb-6"
           />
@@ -23,34 +24,43 @@ const Footer = () => {
           </p>
           <div className="flex gap-4 mt-6">
             <a
-              href="https://www.facebook.com/profile.php?id=100063649204498&mibextid=ZbWKwL"
+              href="https://www.facebook.com/profile.php?id=61585173486333"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-orange"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-radial-orange-footer"
             >
               <FaFacebook className="w-5 h-5" />
             </a>
             <a
-              href="https://www.instagram.com/meifongice/?igsh=ZmswcGl6Z3R5cTV4#"
+              href="https://www.facebook.com/simpangrenggam.zeniustech"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-orange"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-radial-yellow-footer"
+            >
+              <FaFacebook className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.instagram.com/secedu.official"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-radial-orange-footer"
             >
               <FaInstagram className="w-5 h-5" />
             </a>
             <a
-              href="https://www.instagram.com/zeniustech_spg/?igsh=MWljOXY1N2NlMGkwYQ%3D%3D#"
+              href="https://www.instagram.com/zeniustech_spg"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-orange"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-radial-yellow-footer"
             >
               <FaInstagram className="w-5 h-5" />
             </a>
             <a
-              href="https://api.whatsapp.com/send/?phone=601158804476&text&type=phone_number&app_absent=0"
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-orange"
+              href="https://www.xiaohongshu.com/user/profile/670c849d000000000d026b89"
+              target="_blank"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-radial-orange-footer"
             >
-              <FaWhatsapp className="w-5 h-5 pb-0.5" />
+              <img src={xhs} className="w-8 h-8" />
             </a>
           </div>
         </div>
@@ -60,9 +70,9 @@ const Footer = () => {
           <h5 className="font-semibold text-orange mb-4">Quick Links</h5>
           <ul className="space-y-4 text-sm text-white/70">
             <li>
-              <Link to="/programs" className="hover:text-orange">
+              <HashLink smooth to="/#programs" className="hover:text-orange">
                 Programs
-              </Link>
+              </HashLink>
             </li>
             <li>
               <Link to="/about" className="hover:text-orange">

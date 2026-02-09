@@ -1,5 +1,4 @@
 import React from "react";
-import { kw } from "../assets";
 import { managements } from "../constants";
 import { useScrollObserver } from "../hooks/useScrollObserver";
 
@@ -17,7 +16,7 @@ const Management = () => {
           </h2>
 
           {/* Management Card */}
-          <div className="grid md:grid-cols-3 gap-12 md:gap-20">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-20 max-w-3xl">
             {managements.map((management, index) => (
               <div className="rounded-3xl shadow-md overflow-hidden bg-[#ffffff] hover:-translate-y-2 transition-all duration-500 animate-on-scroll animate-fade-up delay-200">
                 <img

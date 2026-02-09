@@ -4,7 +4,7 @@ const AboutHero = () => {
   return (
     <section className="bg-linear-darkblue relative overflow-hidden">
       <div className="container px-6 my-20 h-[250px]">
-        <title className="h-full flex flex-col text-white text-center justify-center">
+        <div className="h-full flex flex-col text-white text-center justify-center">
           <h1 className="text-4xl md:text-5xl font-leagueSpartan font-bold mb-6">
             About Us
           </h1>
@@ -12,7 +12,7 @@ const AboutHero = () => {
             Nurturing young minds since 2021, we are committed to providing
             quality education in a warm and caring environment.
           </p>
-        </title>
+        </div>
 
         <div className="absolute bottom-[-1px] left-0 right-0">
           <svg

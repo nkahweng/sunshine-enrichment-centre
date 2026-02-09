@@ -91,7 +91,7 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                 <li className="py-3 ">
-                  <NavLink to={routes.artCraft} className={navLinkClass}>
+                  <NavLink to={routes.pictureBook} className={navLinkClass}>
                     Picture Book
                   </NavLink>
                 </li>

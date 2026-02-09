@@ -1,5 +1,5 @@
 import React from "react";
-import { cta, groupPhoto, trip4 } from "../assets";
+import { trip4 } from "../assets";
 import { MessageCircle } from "lucide-react";
 import CTAButton from "./CTAButton";
 

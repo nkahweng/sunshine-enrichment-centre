@@ -10,6 +10,7 @@ const Programs = () => {
 
   return (
     <section
+      id="programs"
       ref={containerRef}
       className=" bg-linear-darkblue-top pb-24 pt-36 relative"
     >

@@ -40,6 +40,10 @@ export default {
         "linear-yellow": "linear-gradient(to right, #947729, #FAC946)",
         "linear-orange": "linear-gradient(to right, #915712, #F7941F)",
         "linear-light-orange": "linear-gradient(to right, #FDFBF6, #F6C72A)",
+        "radial-orange-footer":
+          "radial-gradient(circle at 95% 95%,rgba(230,133,18,0.8) 0%,rgba(247,148,31,1) 40%,rgba(255,200,100,1) 100%)",
+        "radial-yellow-footer":
+          "radial-gradient(circle at 95% 95%,rgba(209,166,50,1) 0%,rgba(250,201,70,1) 40%,rgba(255,200,100,1) 100%)",
       },
       keyframes: {
         fadeUp: {

@@ -27,7 +27,7 @@ function App() {
             />
             <Route path="art-craft" element={<ArtCraft />} />
             <Route path="picture-book" element={<PictureBook />} />
-            <Route path="robotic-steam" element={<RoboticsSTEAM />} />
+            <Route path="robotics-steam" element={<RoboticsSTEAM />} />
           </Route>
         </Route>
       </Routes>
