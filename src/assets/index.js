@@ -1,6 +1,6 @@
 import headerLogo from "./logo.png";
 import footerLogo from "./SECEdu_ Logo.png";
-import groupPhoto from "./groupPhoto.jpg";
+import groupPhoto from "./SECEdu_ Group_Photo.png";
 import group from "./group.png";
 
 import children from "./children.jpg";

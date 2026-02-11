@@ -17,7 +17,7 @@ const FindUs = () => {
           <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-8 animate-on-scroll animate-fade-up">
             <span className="">Branch</span> 1
           </h3>
-          <div className="rounded-2xl overflow-hidden animate-on-scroll animate-fade-up delay-400">
+          <div className="bg-white rounded-2xl overflow-hidden animate-on-scroll animate-fade-up delay-400">
             <div className="aspect-video">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.776978851222!2d103.30411167472577!3d1.832894298150339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d0633d87801baf%3A0x79c04b410df2b8c0!2zU3Vuc2hpbmUgRW5yaWNobWVudCBDZW50cmUg5ZCv56iL5pWZ6IKy5a2m5Lmg5Lit5b-D!5e0!3m2!1sen!2smy!4v1768883522837!5m2!1sen!2smy"
@@ -60,7 +60,7 @@ const FindUs = () => {
           <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-8 animate-on-scroll animate-fade-up">
             <span className="">Branch</span> 2
           </h3>
-          <div className=" rounded-2xl overflow-hidden  animate-on-scroll animate-fade-up delay-400">
+          <div className="bg-white rounded-2xl overflow-hidden  animate-on-scroll animate-fade-up delay-400">
             <div className="aspect-video">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.3949163777165!2d103.29011107472618!3d1.9970822979849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d06e943b50094d%3A0x6e7d5c5d33389d18!2s37%2C%20Jln%20Tasik%20Indah%201%2F5%2C%2086000%20Kluang%2C%20Johor%20Darul%20Ta&#39;zim!5e0!3m2!1sen!2smy!4v1770711991214!5m2!1sen!2smy"

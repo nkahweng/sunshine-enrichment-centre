@@ -22,9 +22,9 @@ const Gallery = () => {
       <div className="container mx-auto px-6 font-montserrat">
         {/* Title and subtitle */}
         <div className="text-center mb-16">
-          <p className="text-orange text-sm tracking-wider font-medium mb-3 animate-on-scroll animate-fade-up">
+          {/* <p className="text-orange text-sm tracking-wider font-medium mb-3 animate-on-scroll animate-fade-up">
             OUR GALLERY
-          </p>
+          </p> */}
           <h2 className="text-darkblue font-leagueSpartan text-4xl md:text-5xl font-bold mb-6  animate-on-scroll animate-fade-up delay-200">
             Moments of <span className="text-orange">Joy & Learning</span>
           </h2>

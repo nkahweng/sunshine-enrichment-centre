@@ -14,6 +14,15 @@ const Navbar = () => {
   const [isOpenNav, setIsOpenNav] = useState(false);
   const [programOpen, setProgramOpen] = useState(false);
   const navLinkClass = ({ isActive }) =>
+    `transition-colors p-4 cursor-pointer hover:-translate-y-0.5 hover:text-orange ${
+      isActive
+        ? "text-orange"
+        : isTransparent
+          ? "text-white hover:text-orange"
+          : "text-darkblue hover:text-orange"
+    }`;
+
+  const menuNavLinkClass = ({ isActive }) =>
     `transition-colors p-4 cursor-pointer hover:-translate-y-0.5 ${
       isActive ? "text-orange" : "text-darkblue hover:text-orange"
     }`;
@@ -29,7 +38,9 @@ const Navbar = () => {
 
   return (
     // fix on top
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 shadow-sm duration-300 transition-all ease-in-out ${isVisible ? "translate-y-0" : "-translate-y-full"} ${isOpenNav ? "bg-white ease-in-out" : isTransparent ? "bg-transparent shadow-none" : "bg-white"} `}
+    >
       <div className="max-w-wide mx-auto px-6">
         <div className="flex justify-between items-center h-20">
           {/* Header Logo */}
@@ -41,23 +52,8 @@ const Navbar = () => {
             />
           </NavLink>
 
-          {/* Mobile Menu */}
-          <div className="md:hidden">
-            {!isOpenNav ? (
-              <Menu
-                className="w-6 h-6 text-darkblue"
-                onClick={() => setIsOpenNav(true)}
-              />
-            ) : (
-              <X
-                className="w-6 h-6 text-darkblue"
-                onClick={() => setIsOpenNav(false)}
-              />
-            )}
-          </div>
-
           {/* Links */}
-          <div className="md:flex font-montserrat font-medium gap-8 items-center text-darkblue hidden">
+          <div className="md:flex font-montserrat font-medium gap-8 items-center text-white hidden">
             <NavLink className={navLinkClass} to={routes.home}>
               Home
             </NavLink>
@@ -65,47 +61,53 @@ const Navbar = () => {
             <div className="relative group">
               {/* Trigger */}
               <button
-                className={`flex gap-1 items-center transition hover:-translate-y-0.5 ${isProgramActive ? "text-orange" : "text-darkblue hover:text-orange"}`}
+                className={`flex gap-1 items-center ${navLinkClass({ isActive: isProgramActive })}`}
               >
                 Programs{" "}
                 <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
               </button>
 
               {/* Program Menu */}
-              <ul className="absolute left-0 top-full mt-1 w-60 font-normal bg-[#ffffff] rounded-2xl shadow-lg opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+              <ul className="absolute backdrop-blur-sm left-0 top-full mt-1 w-60 font-normal bg-[#ffffff]/80 rounded-2xl shadow-lg opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
                 <li className="py-3">
-                  <NavLink to={routes.learningClass} className={navLinkClass}>
+                  <NavLink
+                    to={routes.learningClass}
+                    className={menuNavLinkClass}
+                  >
                     Learning Class
                   </NavLink>
                 </li>
                 <li className="py-3 ">
                   <NavLink
                     to={routes.strengtheningClass}
-                    className={navLinkClass}
+                    className={menuNavLinkClass}
                   >
                     Strengthening Class
                   </NavLink>
                 </li>
                 <li className="py-3 ">
-                  <NavLink to={routes.artCraft} className={navLinkClass}>
+                  <NavLink to={routes.artCraft} className={menuNavLinkClass}>
                     {" "}
                     Art & Craft
                   </NavLink>
                 </li>
                 <li className="py-3 ">
-                  <NavLink to={routes.pictureBook} className={navLinkClass}>
+                  <NavLink to={routes.pictureBook} className={menuNavLinkClass}>
                     Picture Book
                   </NavLink>
                 </li>
                 <li className="py-3 ">
-                  <NavLink to={routes.roboticsSTEAM} className={navLinkClass}>
+                  <NavLink
+                    to={routes.roboticsSTEAM}
+                    className={menuNavLinkClass}
+                  >
                     Robotic & STEAM
                   </NavLink>
                 </li>
                 <li className="py-3 ">
                   <NavLink
                     to={routes.englishEnrichment}
-                    className={navLinkClass}
+                    className={menuNavLinkClass}
                   >
                     English Enrichment Class
                   </NavLink>
@@ -117,12 +119,27 @@ const Navbar = () => {
             </NavLink>
             <CTAButton text="Contact Us" icon={<MessageCircle size={15} />} />
           </div>
+
+          {/* Mobile Menu */}
+          <div className="md:hidden">
+            {!isOpenNav ? (
+              <Menu
+                className={`w-6 h-6 ${isTransparent ? "text-white" : "text-darkblue"}`}
+                onClick={() => setIsOpenNav(true)}
+              />
+            ) : (
+              <X
+                className="w-6 h-6 text-darkblue"
+                onClick={() => setIsOpenNav(false)}
+              />
+            )}
+          </div>
         </div>
 
         {/* Mobile */}
         {isOpenNav && (
           <div
-            className={`bg-white w-full md:hidden overflow-hidden px-2 pt-1 pb-4 border-t`}
+            className={`${isTransparent ? "bg-transparent" : "bg-white border-t"} w-full md:hidden overflow-hidden px-2 pt-1 pb-4`}
           >
             <div className="flex flex-col gap-2">
               <NavLink className={mobileNavLinkClass} to={routes.home}>
@@ -130,7 +147,11 @@ const Navbar = () => {
               </NavLink>
               <div className="p-2">
                 <button
-                  className={`flex gap-1 items-center ${isProgramActive ? "text-orange" : "text-darkblue"}`}
+                  className={`flex gap-1 items-center transition-colors cursor-pointer hover:-translate-y-0.5 hover:text-orange ${
+                    isProgramActive
+                      ? "text-orange"
+                      : "text-darkblue hover:text-orange"
+                  }`}
                   onClick={() => setProgramOpen(!programOpen)}
                 >
                   Programs

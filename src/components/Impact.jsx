@@ -30,7 +30,7 @@ const Impact = () => {
   return (
     <section ref={containerRef} className="font-montserrat">
       <div className="max-w-wide mx-auto px-6">
-        <div className="grid lg:grid-cols-9 gap-12 pt-10 pb-16 items-center">
+        <div className="grid lg:grid-cols-9 gap-12 pt-10 pb:8 lg:pb-16 items-center">
           {/* Left content */}
           <div className="lg:col-span-3">
             <h2 className="text-4xl md:text-5xl font-bold text-darkblue mb-6 font-leagueSpartan leading-tight animate-on-scroll animate-slide-right">

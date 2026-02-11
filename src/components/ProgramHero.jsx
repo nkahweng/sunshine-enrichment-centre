@@ -9,7 +9,7 @@ const ProgramHero = ({
   img,
 }) => {
   return (
-    <section className={`mt-20 px-6 py-20 overflow-hidden relative`}>
+    <section className={`pt-40 px-6 py-20 overflow-hidden relative`}>
       <div className="absolute inset-0 z-10 opacity-10">
         <img src={img} alt={title} className="w-full h-full object-cover" />
       </div>
