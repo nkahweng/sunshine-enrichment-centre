@@ -48,7 +48,7 @@ const Footer = () => {
               <FaInstagram className="w-5 h-5" />
             </a>
             <a
-              href="https://www.instagram.com/zeniustech_spg/"
+              href="https://www.instagram.com/reel/DUmqmxoiV52/?igsh=cDcxbWZtMDZxN3By"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-radial-yellow-footer"
