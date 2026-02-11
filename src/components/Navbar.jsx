@@ -4,11 +4,13 @@ import { NavLink, useLocation } from "react-router-dom";
 import CTAButton from "./CTAButton";
 import { MessageCircle, ChevronDown, Menu, X } from "lucide-react";
 import { routes } from "../constants";
+import { useNavbar } from "../hooks/useNavbar";
 
 const Navbar = () => {
   const location = useLocation();
   const isProgramActive = location.pathname.startsWith("/programs");
 
+  const { isVisible, isTransparent } = useNavbar();
   const [isOpenNav, setIsOpenNav] = useState(false);
   const [programOpen, setProgramOpen] = useState(false);
   const navLinkClass = ({ isActive }) =>
@@ -70,7 +72,7 @@ const Navbar = () => {
               </button>
 
               {/* Program Menu */}
-              <ul className="absolute left-0 top-full mt-1 w-56 font-normal bg-[#ffffff] rounded-2xl shadow-lg opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+              <ul className="absolute left-0 top-full mt-1 w-60 font-normal bg-[#ffffff] rounded-2xl shadow-lg opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
                 <li className="py-3">
                   <NavLink to={routes.learningClass} className={navLinkClass}>
                     Learning Class
@@ -98,6 +100,14 @@ const Navbar = () => {
                 <li className="py-3 ">
                   <NavLink to={routes.roboticsSTEAM} className={navLinkClass}>
                     Robotic & STEAM
+                  </NavLink>
+                </li>
+                <li className="py-3 ">
+                  <NavLink
+                    to={routes.englishEnrichment}
+                    className={navLinkClass}
+                  >
+                    English Enrichment Class
                   </NavLink>
                 </li>
               </ul>
@@ -171,6 +181,14 @@ const Navbar = () => {
                       className={mobileNavLinkClass}
                     >
                       Robotic & STEAM
+                    </NavLink>
+                  </li>
+                  <li className="py-3 ">
+                    <NavLink
+                      to={routes.englishEnrichment}
+                      className={mobileNavLinkClass}
+                    >
+                      English Enrichment Class{" "}
                     </NavLink>
                   </li>
                 </ul>

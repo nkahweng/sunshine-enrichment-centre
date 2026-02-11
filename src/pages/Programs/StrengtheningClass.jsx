@@ -72,11 +72,20 @@ const StrengtheningClass = () => {
             {/* Sidebar */}
             <div className="col-span-1">
               <div className="rounded-2xl md:mt-8 sticky top-28">
-                <img
+                {/* <img
                   src={strengthening}
                   alt="Sunshine Enrichment Centre Engaging in Interactive English Activities"
                   className="rounded-2xl w-full max-h-[calc(100vh-9rem)] object-cover shadow-lg hover:-translate-y-1 transition-transform duration-300 animate-on-scroll animate-fade-up"
-                />
+                /> */}
+                <iframe
+                  className="aspect-video rounded-2xl shadow-lg animate-on-scroll animate-fade-up"
+                  src="https://www.youtube.com/embed/FOvAxYUjgVQ?autoplay=1&mute=1&si=xLtSvSeD_JWfSdi-"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
               </div>
             </div>
           </div>

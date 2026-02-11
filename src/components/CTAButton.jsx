@@ -2,10 +2,16 @@ import React from "react";
 import { MessageCircle } from "lucide-react";
 import { WHATSAPP_LINK } from "../constants";
 
-const CTAButton = ({ icon, text, className = "" }) => {
+const CTAButton = ({
+  icon,
+  text,
+  className = "",
+  backgroundColor = "bg-orange-yellow",
+  rounded = "rounded-3xl",
+}) => {
   return (
     <button
-      className={`font-montserrat text-white bg-orange-yellow font-semibold rounded-3xl hover:opacity-90 ${className}`}
+      className={`font-montserrat text-white font-semibold hover:opacity-90 ${className} ${backgroundColor} ${rounded}`}
     >
       <a
         href={WHATSAPP_LINK}

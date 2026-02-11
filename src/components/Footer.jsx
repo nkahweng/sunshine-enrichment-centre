@@ -40,7 +40,7 @@ const Footer = () => {
               <FaFacebook className="w-5 h-5" />
             </a>
             <a
-              href="https://www.instagram.com/secedu.official"
+              href="https://www.instagram.com/_u/secedu.official"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-radial-orange-footer"
@@ -48,7 +48,7 @@ const Footer = () => {
               <FaInstagram className="w-5 h-5" />
             </a>
             <a
-              href="https://www.instagram.com/zeniustech_spg"
+              href="https://www.instagram.com/_u/zeniustech_spg"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-radial-yellow-footer"

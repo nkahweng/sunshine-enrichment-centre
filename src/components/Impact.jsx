@@ -30,7 +30,7 @@ const Impact = () => {
   return (
     <section ref={containerRef} className="font-montserrat">
       <div className="max-w-wide mx-auto px-6">
-        <div className="grid lg:grid-cols-9 gap-12 lg:gap-20 pt-10 pb-16 items-center">
+        <div className="grid lg:grid-cols-9 gap-12 pt-10 pb-16 items-center">
           {/* Left content */}
           <div className="lg:col-span-3">
             <h2 className="text-4xl md:text-5xl font-bold text-darkblue mb-6 font-leagueSpartan leading-tight animate-on-scroll animate-slide-right">
@@ -47,12 +47,21 @@ const Impact = () => {
 
           {/* Middle content */}
           <div className="lg:col-span-2 flex justify-center relative">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-orange/20 rounded-full blur-3xl -z-10" />
-            <img
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-orange/20 rounded-full blur-3xl -z-10" />
+            {/* <img
               src={student}
               alt="Sunshine Enrichment Centre Student Posing with a Hand Over His Head "
               className="w-full max-w-[250px] lg:max-w-full drop-shadow-xl hover:scale-105 transition-transform duration-500 animate-on-scroll animate-pop-up delay-500"
-            />
+            /> */}
+            <iframe
+              className="aspect-[9/16] max-h-screen rounded-2xl shadow-lg animate-on-scroll animate-fade-up"
+              src="https://www.youtube.com/embed/2CNiCbxdlWc"
+              title="SECEdu_Vlog"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
           </div>
 
           {/* Right content */}

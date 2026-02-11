@@ -23,18 +23,18 @@ const Hero = () => {
 
       <div className="max-w-wide mx-auto px-6 z-10 w-full mt-32 lg:mt-0">
         <div className="grid lg:grid-cols-5 gap-12">
-          <div className="lg:col-span-5 flex flex-col justify-center relative lg:pl-32">
+          <div className="lg:col-span-5 flex flex-col justify-center relative lg:pl-32 p-2">
             {/* Main Headline */}
             <h1 className="font-leagueSpartan font-bold text-white tracking-tight mb-6 animate-on-scroll animate-slide-right">
-              <span className="text-5xl md:text-7xl lg:text-9xl text-orange drop-shadow-md relative pr-8 pt-4">
+              <span className="text-6xl md:text-7xl lg:text-9xl text-orange drop-shadow-md relative pr-8 pt-4">
                 {/* <Sun className="absolute top-0 right-0 text-yellow h-12 w-12" /> */}
                 SUNSHINE
               </span>
-              <span className="inline-block text-4xl md:text-5xl lg:text-7xl leading-none text-white/90 relative">
+              <span className="inline-block text-3xl md:text-5xl lg:text-7xl leading-none text-white/90 relative">
                 ENRICHMENT CENTRE
                 <img
                   src={heroBoyGirl}
-                  className="absolute -right-12 -top-12 w-24"
+                  className="absolute -top-6 w-14 -right-12 md:-top-12 md:w-24"
                 />
               </span>
             </h1>
@@ -49,8 +49,10 @@ const Hero = () => {
             <div className="flex flex-wrap gap-4 animate-on-scroll animate-fade-up delay-400">
               <CTAButton
                 text="Chat With Us on WhatsApp"
-                icon={<MessageCircle size={18} />}
-                className="bg-none font-normal border-b hover:text-orange hover:border-orange"
+                // icon={<MessageCircle size={18} />}
+                className="underline hover:text-orange hover:border-orange"
+                backgroundColor="bg-none"
+                rounded=""
               />
             </div>
           </div>

@@ -10,6 +10,7 @@ import PictureBook from "./pages/Programs/PictureBook";
 import ArtCraft from "./pages/Programs/ArtCraft";
 import Layout from "./components/Layout";
 import ScrollToTop from "./components/ScrollToTop";
+import EnglishEnrichment from "./pages/Programs/EnglishEnrichment";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
             <Route path="art-craft" element={<ArtCraft />} />
             <Route path="picture-book" element={<PictureBook />} />
             <Route path="robotics-steam" element={<RoboticsSTEAM />} />
+            <Route path="english-enrichment" element={<EnglishEnrichment />} />
           </Route>
         </Route>
       </Routes>

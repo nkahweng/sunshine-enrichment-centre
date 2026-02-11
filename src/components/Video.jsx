@@ -20,7 +20,6 @@ const Video = () => {
           src={introVideo}
           autoPlay={true}
           muted={true}
-          controls={true}
           loop={true}
         ></video>
       </div>

@@ -13,6 +13,7 @@ import {
   artcraft,
   picturebook,
   robotics,
+  english,
 } from "../assets";
 
 export const WHATSAPP_NUMBER = "601158804476";
@@ -26,6 +27,7 @@ export const routes = {
   artCraft: "/programs/art-craft",
   pictureBook: "/programs/picture-book",
   roboticsSTEAM: "/programs/robotics-steam",
+  englishEnrichment: "/programs/english-enrichment",
 };
 
 export const programs = [
@@ -78,6 +80,15 @@ export const programs = [
       "Develops problem-solving, creativity, and future-ready STEAM skills through progressive learning levels.",
     img: robotics,
     route: routes.roboticsSTEAM,
+  },
+  {
+    id: "english-enrichment",
+    icon: Bot,
+    title: "English Enrichment Class",
+    ages: "7 - 17 years",
+    description: "Stop forcing grammar. Start sparking communication.",
+    img: english,
+    route: routes.englishEnrichment,
   },
 ];
 

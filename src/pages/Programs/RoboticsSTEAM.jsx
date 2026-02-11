@@ -88,12 +88,21 @@ const RoboticsSTEAM = () => {
             </div>
             {/* Sidebar */}
             <div className="col-span-1">
-              <div className="rounded-2xl md:mt-8 sticky top-28">
-                <img
+              <div className="rounded-2xl md:mt-8 sticky top-28 m-24">
+                {/* <img
                   src={robotics}
                   alt="Sunshine Enrichment Centre Children Assembling Robotic Components"
                   className="rounded-2xl w-full max-h-[calc(100vh-9rem)] object-cover shadow-lg hover:-translate-y-1 transition-transform duration-300 animate-on-scroll animate-fade-up"
-                />
+                /> */}
+                <iframe
+                  className="aspect-[9/16] rounded-2xl shadow-lg animate-on-scroll animate-fade-up"
+                  src="https://www.youtube.com/embed/MRegPznUpsY"
+                  title="SECEdu Robotics_What is Arduino"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
               </div>
             </div>
           </div>

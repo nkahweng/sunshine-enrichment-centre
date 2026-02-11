@@ -17,6 +17,8 @@ import robotics from "./Robotics.png";
 import robotics2 from "./robotics2.jpg";
 import robotics3 from "./robotics3.jpg";
 
+import english from "./English Enrichment Class.png";
+
 import trip1 from "./trip1.jpg";
 import trip2 from "./trip2.jpg";
 import trip3 from "./trip3.jpg";
@@ -47,6 +49,7 @@ export {
   children,
   children2,
   strengthening,
+  english,
   artcraft,
   artcraft2,
   picturebook,

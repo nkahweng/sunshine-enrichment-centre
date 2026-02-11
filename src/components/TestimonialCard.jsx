@@ -3,7 +3,7 @@ import React from "react";
 
 const TestimonialCard = ({ index, name, description, classes }) => {
   return (
-    <div key={index} className="w-full lg:w-1/2 flex-shrink-0 p-4">
+    <div key={index} className="w-full flex-shrink-0 p-4 h-full">
       <div className="bg-white rounded-2xl h-full shadow-sm hover:shadow-md transition-all duration-500 p-8 lg:p-12 relative animate-on-scroll animate-fade-up delay-400">
         <div className="relative h-full flex flex-col z-10">
           {/* 5 Stars for Trust */}
