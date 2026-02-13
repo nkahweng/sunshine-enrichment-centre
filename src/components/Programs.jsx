@@ -17,9 +17,9 @@ const Programs = () => {
       <div className="container mx-auto font-montserrat relative z-10">
         {/* Title and subtitle */}
         <div className="text-center mb-20">
-          <p className="text-orange text-sm tracking-wider font-medium mb-3 animate-on-scroll animate-fade-up">
+          {/* <p className="text-orange text-sm tracking-wider font-medium mb-3 animate-on-scroll animate-fade-up">
             OUR PROGRAMS
-          </p>
+          </p> */}
           <h2 className="text-white font-leagueSpartan text-4xl md:text-5xl font-bold mb-6 animate-on-scroll animate-fade-up delay-200">
             Programs Designed for{" "}
             <span className="text-orange">Every Child</span>

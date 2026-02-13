@@ -1,12 +1,15 @@
-import { useEffect, useRef } from "react";
-import { student } from "../assets";
+import { useEffect, useRef, useState } from "react";
 import CTAButton from "./CTAButton";
 import Stats from "./Stats";
+import { Volume2 } from "lucide-react";
 
 const Impact = () => {
   const containerRef = useRef(null);
+  const iframeRef = useRef(null);
+  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
+    // initialize intersection observer
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -19,13 +22,25 @@ const Impact = () => {
       { threshold: 0.2 },
     );
 
-    const elements =
-      containerRef.current.querySelectorAll(".animate-on-scroll");
-
-    elements.forEach((el) => observer.observe(el));
+    if (containerRef.current) {
+      const elements =
+        containerRef.current.querySelectorAll(".animate-on-scroll");
+      elements.forEach((el) => observer.observe(el));
+    }
 
     return () => observer.disconnect();
   }, []);
+
+  const handleUnmute = () => {
+    if (iframeRef.current) {
+      // Send message to iframe to unmute
+      iframeRef.current.contentWindow.postMessage(
+        '{"event":"command","func":"unMute","args":""}',
+        "*",
+      );
+      setIsMuted(false);
+    }
+  };
 
   return (
     <section ref={containerRef} className="font-montserrat">
@@ -48,20 +63,34 @@ const Impact = () => {
           {/* Middle content */}
           <div className="lg:col-span-2 flex justify-center relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-orange/20 rounded-full blur-3xl -z-10" />
-            {/* <img
-              src={student}
-              alt="Sunshine Enrichment Centre Student Posing with a Hand Over His Head "
-              className="w-full max-w-[250px] lg:max-w-full drop-shadow-xl hover:scale-105 transition-transform duration-500 animate-on-scroll animate-pop-up delay-500"
-            /> */}
-            <iframe
-              className="aspect-[9/16] max-h-screen rounded-2xl shadow-lg animate-on-scroll animate-fade-up"
-              src="https://www.youtube.com/embed/2CNiCbxdlWc"
-              title="SECEdu_Vlog"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
+
+            {/* Video Wrapper */}
+            <div className="relative w-full max-w-[280px] aspect-[9/16] rounded-2xl bg-gray-200 shadow-lg overflow-hidden animate-on-scroll animate-fade-up">
+              {/* YouTube Iframe */}
+              <iframe
+                ref={iframeRef}
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/2CNiCbxdlWc?autoplay=1&mute=1&controls=0&loop=1&playlist=2CNiCbxdlWc&modestbranding=1&rel=0&playsinline=1&enablejsapi=1"
+                title="Sunshine Enrichment Centre"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+
+              {/* Unmute Button Overlay */}
+              {isMuted && (
+                <button
+                  onClick={handleUnmute}
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 bg-white text-orange px-4 py-2 rounded-full shadow-lg hover:scale-105 transition-transform flex items-center gap-2 z-20"
+                >
+                  <span>
+                    <Volume2 />
+                  </span>
+                  Unmute
+                </button>
+              )}
+            </div>
           </div>
 
           {/* Right content */}
@@ -69,7 +98,7 @@ const Impact = () => {
             {/* h-full so that the flexbox can follow height of parent */}
             <div className="flex flex-col justify-center h-full text-darkblue">
               <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-10 border-l-2 border-orange pl-6 italic animate-on-scroll animate-slide-right delay-200">
-                At Sunshine Enrichment Centre, we believe every child’s
+                At Sunshine Enrichment Centre, we believe every child's
                 potential shines brightest when nurtured with joy. Founded in
                 2021 by Ms. Lim Mei Foong, our centre was born from a simple
                 truth:{" "}
@@ -79,7 +108,7 @@ const Impact = () => {
                 </span>
                 . We began in 2019 as home tuition for only 5 students, lesson
                 crafted on a living room floor, and have blossomed into Simpang
-                Renggam’s trusted centre for learning. 
+                Renggam's trusted centre for learning.
               </p>
               <div className="pt-4">
                 <Stats />

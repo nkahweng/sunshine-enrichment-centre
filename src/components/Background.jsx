@@ -51,7 +51,7 @@ const Background = () => {
 
           {/* Vision Mission */}
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 mx-6">
-            <div className="flex flex-col items-center bg-[#ffffff] shadow-md rounded-3xl px-14 py-10 text-center hover:-translate-y-2 transition-all duration-500 animate-on-scroll animate-fade-up">
+            <div className="flex flex-col items-center bg-[#ffffff] shadow-md rounded-3xl px-4 lg:px-14 py-10 text-center hover:-translate-y-2 transition-all duration-500 animate-on-scroll animate-fade-up">
               <div className="w-14 h-14 bg-green rounded-full flex items-center justify-center">
                 <Eye className="w-7 h-7 text-white" />
               </div>
@@ -68,7 +68,7 @@ const Background = () => {
                 world.
               </p>
             </div>
-            <div className="flex flex-col items-center bg-[#ffffff] shadow-md rounded-3xl px-14 py-10 text-center hover:-translate-y-2 transition-all duration-500 animate-on-scroll animate-fade-up">
+            <div className="flex flex-col items-center bg-[#ffffff] shadow-md rounded-3xl px-4 lg:px-14 py-10 text-center hover:-translate-y-2 transition-all duration-500 animate-on-scroll animate-fade-up">
               <div className="w-14 h-14 bg-yellow rounded-full flex items-center justify-center">
                 <Goal className="w-7 h-7 text-white" />
               </div>

@@ -79,7 +79,7 @@ const StrengtheningClass = () => {
                 /> */}
                 <iframe
                   className="aspect-video rounded-2xl shadow-lg animate-on-scroll animate-fade-up"
-                  src="https://www.youtube.com/embed/FOvAxYUjgVQ?autoplay=1&mute=1&si=xLtSvSeD_JWfSdi-"
+                  src="https://www.youtube.com/embed/FOvAxYUjgVQ?si=xLtSvSeD_JWfSdi-"
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

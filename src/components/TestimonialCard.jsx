@@ -28,9 +28,7 @@ const TestimonialCard = ({ index, name, description, classes }) => {
                 <h5 className="text-darkblue font-bold text-lg leading-none mb-1">
                   {name}
                 </h5>
-                <p className="text-orange text-sm font-medium">
-                  Parent of {classes} student
-                </p>
+                <p className="text-orange text-sm font-medium">{classes}</p>
               </div>
             </div>
           </div>
