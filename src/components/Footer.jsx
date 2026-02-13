@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa";
 import { HashLink } from "react-router-hash-link";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -11,11 +12,13 @@ const Footer = () => {
       <footer className="container grid lg:grid-cols-4 gap-10 py-14">
         {/* Brand */}
         <div className="md:col-span-2">
-          <img
-            src={footerLogo}
-            alt="Sunshine Enrichment Centre Logo"
-            className="w-14 h-14 mb-6"
-          />
+          <NavLink to="/" onClick={() => window.scrollTo(0, 0)}>
+            <img
+              src={footerLogo}
+              alt="Sunshine Enrichment Centre Logo"
+              className="w-14 h-14 mb-6"
+            />
+          </NavLink>
           <p className="text-white/70 max-w-md text-sm">
             Sunshine Enrichment Centre isn’t just a place for learning—it’s a
             space where dreams come alive. Established with a heart full of
@@ -40,7 +43,7 @@ const Footer = () => {
               <FaFacebook className="w-5 h-5" />
             </a>
             <a
-              href="https://www.instagram.com/_u/secedu.official/"
+              href="https://www.instagram.com/secedu.official?igsh=Y2pzNXpuMWR6NTFk"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-radial-orange-footer"
@@ -48,7 +51,7 @@ const Footer = () => {
               <FaInstagram className="w-5 h-5" />
             </a>
             <a
-              href="https://www.instagram.com/reel/DUmqmxoiV52/?igsh=cDcxbWZtMDZxN3By"
+              href="https://www.instagram.com/zeniustech_spg?igsh=MXZ4anR0ZGZ2NWhiZA=="
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-radial-yellow-footer"

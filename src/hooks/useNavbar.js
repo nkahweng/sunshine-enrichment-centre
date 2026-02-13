@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { routes } from "../constants";
 
 export const useNavbar = () => {
   const { pathname } = useLocation();
@@ -8,29 +7,34 @@ export const useNavbar = () => {
   const [isTransparent, setIsTransparent] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const isHomePage = pathname === "/";
-
   useEffect(() => {
     const controlNavbar = () => {
       const currentScrollY = window.scrollY; // window.scrollY tells how many pixels have been scrolled
-      if (isHomePage && currentScrollY < 30) {
+      if (pathname === "/" && currentScrollY < 30) {
         setIsTransparent(true);
       } else {
         setIsTransparent(false);
       }
 
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
+      // if actually got scroll
+      if (currentScrollY != lastScrollY) {
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+          // Scroll down
+          setIsVisible(false);
+        } else if (currentScrollY < lastScrollY) {
+          // Scroll up
+          setIsVisible(true);
+        }
       }
 
       setLastScrollY(currentScrollY);
     };
 
+    controlNavbar();
+
     window.addEventListener("scroll", controlNavbar);
     return () => window.removeEventListener("scroll", controlNavbar);
-  }, [lastScrollY, location.pathname]);
+  }, [pathname, lastScrollY]);
 
   return { isVisible, isTransparent };
 };
