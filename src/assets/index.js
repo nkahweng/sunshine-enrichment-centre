@@ -1,45 +1,45 @@
-import headerLogo from "./logo.png";
-import footerLogo from "./SECEdu_ Logo.png";
-import groupPhoto from "./SECEdu_ Group_Photo.png";
-import group from "./group.png";
+import headerLogo from "./logo.webp";
+import footerLogo from "./SECEdu_ Logo.webp";
+import groupPhoto from "./SECEdu_ Group_Photo.webp";
+import group from "./group.webp";
 
-import children from "./children.jpg";
-import children2 from "./children2.jpg";
-import learning from "./Learning Class.png";
-import strengthening from "./Strengthening Class.png";
-import artcraft from "./Art and Craft.png";
-import artcraft2 from "./artcraft2.jpg";
+import children from "./children.webp";
+import children2 from "./children2.webp";
+import learning from "./Learning Class.webp";
+import strengthening from "./Strengthening Class.webp";
+import artcraft from "./Art and Craft.webp";
+import artcraft2 from "./artcraft2.webp";
 
-import picturebook from "./Picture Book.png";
-import picturebook2 from "./picturebook2.jpg";
+import picturebook from "./Picture Book.webp";
+import picturebook2 from "./picturebook2.webp";
 
-import robotics from "./Robotics.png";
-import robotics2 from "./robotics2.jpg";
-import robotics3 from "./robotics3.jpg";
+import robotics from "./Robotics.webp";
+import robotics2 from "./robotics2.webp";
+import robotics3 from "./robotics3.webp";
 
-import english from "./English Enrichment Class.png";
+import english from "./English Enrichment Class.webp";
 
-import trip1 from "./trip1.jpg";
-import trip2 from "./trip2.jpg";
-import trip3 from "./trip3.jpg";
-import trip4 from "./trip4.jpg";
-import trip5 from "./trip5.jpg";
-import trip6 from "./trip6.jpg";
+import trip1 from "./trip1.webp";
+import trip2 from "./trip2.webp";
+import trip3 from "./trip3.webp";
+import trip4 from "./trip4.webp";
+import trip6 from "./trip6.webp";
 
-import student from "./student.png";
+import student from "./student.webp";
 
 import FacebookIcon from "./icons/facebook.svg?react";
 import instagram from "./icons/instagram.svg";
 import whatsapp from "./icons/whatsapp.svg";
-import xhs from "./xhs_logo.png";
+import xhs from "./xhs_logo.webp";
 
-import mrChew from "./Mr. Chew.jpg";
-import msLim from "./Ms. Lim.jpg";
+import mrChew from "./Mr. Chew.webp";
+import msLim from "./Ms. Lim.webp";
 
 import introVideo from "./SECEdu Website Video.mp4";
+import videoPoster from "./video-poster.webp";
 
-import heroBg from "./SECEdu Background.png";
-import heroBoyGirl from "./SECEdu_Boy_Girl.png";
+import heroBg from "./SECEdu Background.webp";
+import heroBoyGirl from "./SECEdu_Boy_Girl.webp";
 
 export {
   headerLogo,
@@ -62,12 +62,12 @@ export {
   trip2,
   trip3,
   trip4,
-  trip5,
   trip6,
   student,
   msLim,
   mrChew,
   introVideo,
+  videoPoster,
   heroBg,
   heroBoyGirl,
 };
