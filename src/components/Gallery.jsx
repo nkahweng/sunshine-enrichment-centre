@@ -1,11 +1,9 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import {
   artcraft2,
-  groupPhoto,
   picturebook2,
   robotics3,
   trip1,
-  trip2,
   trip3,
 } from "../assets";
 import { useScrollObserver } from "../hooks/useScrollObserver";
@@ -74,7 +72,7 @@ const Gallery = () => {
                 src={trip3}
                 alt="Sunshine Enrichment Centre Children - Three Girls on a Train"
                 className={galleryStyle}
-                koading="lazy"
+                loading="lazy"
               />
             </div>
           </div>

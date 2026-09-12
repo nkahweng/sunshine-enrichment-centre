@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
@@ -11,6 +10,7 @@ import ArtCraft from "./pages/Programs/ArtCraft";
 import Layout from "./components/Layout";
 import ScrollToTop from "./components/ScrollToTop";
 import EnglishEnrichment from "./pages/Programs/EnglishEnrichment";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -31,6 +31,7 @@ function App() {
             <Route path="robotics-steam" element={<RoboticsSTEAM />} />
             <Route path="english-enrichment" element={<EnglishEnrichment />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
