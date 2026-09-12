@@ -13,7 +13,7 @@ import artcraft2 from "./artcraft2.webp";
 import picturebook from "./Picture Book.webp";
 import picturebook2 from "./picturebook2.webp";
 
-import robotics from "./Robotics.webp";
+import robotics from "./robotics.webp";
 import robotics2 from "./robotics2.webp";
 import robotics3 from "./robotics3.webp";
 
