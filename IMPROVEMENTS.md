@@ -85,19 +85,20 @@ Shipped: **1080p, CRF26 + denoise, 15.000s frame-exact → 5.77 MB** (from 19.9 
       `Layout` parent only renders when a child matches. Blank white page. Add
       `<Route path="*" element={<NotFound />} />`.
 
-## 3. `npm run lint` fails — 41 errors (36 remaining)
+## 3. `npm run lint` fails — 41 errors — done (only `Slider.jsx` still fails)
 
-- [ ] Remove unused imports: the `Navbar`/`Footer` imports in every page file (`Layout`
+- [x] Remove unused imports: the `Navbar`/`Footer` imports in every page file (`Layout`
       already renders them), leftover `useState`/`useRef`/`useEffect`, unused asset imports.
-- [ ] Strip non-breaking spaces pasted into [Background.jsx:64](src/components/Background.jsx#L64)
+- [x] Strip non-breaking spaces pasted into [Background.jsx:64](src/components/Background.jsx#L64)
       and [Benefits.jsx:261-266](src/components/Benefits.jsx#L261-L266).
-- [ ] Address the three `react-hooks/set-state-in-effect` errors rather than silencing them —
+- [x] Address the three `react-hooks/set-state-in-effect` errors rather than silencing them —
       [Navbar.jsx:36](src/components/Navbar.jsx#L36) and
       [CarouselWrapper.jsx:62,67](src/components/CarouselWrapper.jsx#L62-L67). The Navbar one
       (closing the mobile menu on route change) is the pattern React 19 now flags as a
       cascading render; deriving it, or closing the menu in the click handler, avoids the
-      extra pass.
-- [ ] **[useNavbar.js](src/hooks/useNavbar.js)** keeps `lastScrollY` in state *and* in the
+      extra pass. *(Navbar fixed by deriving open state from the path the menu was opened on.
+      The other two were actually in `Slider.jsx`, not `CarouselWrapper.jsx`.)*
+- [x] **[useNavbar.js](src/hooks/useNavbar.js)** keeps `lastScrollY` in state *and* in the
       effect's dependency array, so it tears down and re-adds the scroll listener on **every
       scroll event**. Moving `lastScrollY` to a `useRef` makes it one listener for the
       component's life.
@@ -129,15 +130,15 @@ there is no top-level `404.html`, so deep links work without a `_redirects` file
       `/programs/robotics-steam` directly — or refreshing while on it — returns a 404 from the
       host. The exact config depends on where this is hosted. Needed before the next deploy.
 
-## 6. Accessibility
+## 6. Accessibility — done
 
-- [ ] The mobile menu toggle uses bare lucide icons with `onClick`
+- [x] The mobile menu toggle uses bare lucide icons with `onClick`
       ([Navbar.jsx:126-135](src/components/Navbar.jsx#L126-L135)) — not `<button>`, so it is
       unreachable by keyboard and invisible to screen readers.
-- [ ] [CTAButton.jsx:13-25](src/components/CTAButton.jsx#L13-L25) nests `<a>` inside
+- [x] [CTAButton.jsx:13-25](src/components/CTAButton.jsx#L13-L25) nests `<a>` inside
       `<button>`, which is invalid HTML. Since it always navigates to WhatsApp, it should be a
       styled `<a>`.
-- [ ] Carousel arrows in [CarouselWrapper.jsx:57-69](src/components/CarouselWrapper.jsx#L57-L69)
+- [x] Carousel arrows in [CarouselWrapper.jsx:57-69](src/components/CarouselWrapper.jsx#L57-L69)
       have no `aria-label` (the pagination dots below correctly do).
 - [x] The `heroBoyGirl` image at [Hero.jsx:35-38](src/components/Hero.jsx#L35-L38) has no `alt`.
 
@@ -146,12 +147,12 @@ there is no top-level `404.html`, so deep links work without a `_redirects` file
 - [ ] `src/components/Slider.jsx` is untracked and looks like a scratch experiment — dummy
       `"one"/"two"/"three"` content, duplicating `CarouselWrapper`, with dead framer-motion
       imports. Delete it or finish it.
-- [ ] Route-level `React.lazy` would split the six program pages out of the main bundle.
+- [x] Route-level `React.lazy` would split the six program pages out of the main bundle.
       Modest next to the images, but easy.
-- [ ] `src/assets/index.js` imports `facebook.svg?react`, but `vite-plugin-svgr` is not
+- [x] `src/assets/index.js` imports `facebook.svg?react`, but `vite-plugin-svgr` is not
       installed — that import yields a URL string, not a component. Install the plugin or drop
-      the unused `FacebookIcon` export.
-- [ ] `npx update-browserslist-db@latest` — caniuse data is 9 months stale (build warning).
+      the unused `FacebookIcon` export. *(Dropped it, plus the unused instagram/whatsapp SVGs.)*
+- [x] `npx update-browserslist-db@latest` — caniuse data is 9 months stale (build warning).
 
 ---
 
