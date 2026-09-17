@@ -61,9 +61,10 @@ const Footer = () => {
             <a
               href="https://www.xiaohongshu.com/user/profile/670c849d000000000d026b89"
               target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center rounded-full bg-radial-orange-footer"
             >
-              <img src={xhs} className="w-8 h-8" />
+              <img src={xhs} alt="Xiaohongshu" className="w-8 h-8" />
             </a>
           </div>
         </div>

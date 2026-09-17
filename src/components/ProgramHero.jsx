@@ -11,7 +11,8 @@ const ProgramHero = ({
   return (
     <section className={`pt-40 px-6 py-20 overflow-hidden relative`}>
       <div className="absolute inset-0 z-10 opacity-10">
-        <img src={img} alt={title} className="w-full h-full object-cover" />
+        {/* Decorative backdrop; the h1 below already names the programme */}
+        <img src={img} alt="" className="w-full h-full object-cover" />
       </div>
       <div className={`absolute inset-0 z-0 ${background}`} />
       <div className="font-montserrat text-white container mx-auto relative z-30">

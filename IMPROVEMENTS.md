@@ -107,16 +107,23 @@ Shipped: **1080p, CRF26 + denoise, 15.000s frame-exact → 5.77 MB** (from 19.9 
 High value here specifically, because the primary channel is people sharing the link over
 WhatsApp. [index.html](index.html) currently has a `<title>` and nothing else.
 
-- [ ] Add `<meta name="description">` and Open Graph / Twitter tags. Without `og:title`,
+- [x] Add `<meta name="description">` and Open Graph / Twitter tags. Without `og:title`,
       `og:description`, and `og:image`, **every link shared on WhatsApp shows a bare URL** with
       no image or text. Probably the cheapest conversion win available.
-- [ ] Add `robots.txt` and a sitemap.
-- [ ] Add `LocalBusiness` JSON-LD. Both branches — full addresses and opening hours — are
+- [x] Add `robots.txt` and a sitemap.
+- [x] Add `LocalBusiness` JSON-LD. Both branches — full addresses and opening hours — are
       already structured in [constants/index.js:216-235](src/constants/index.js#L216-L235), which
       is exactly the data Google wants for local search. This is a local business with two
       physical locations.
 
+  Done: per-route titles/descriptions/canonicals, built into static HTML per route (see
+  CLAUDE.md "SEO / `<head>`").
+
 ## 5. Deployment will break on deep links
+
+Hosted on Cloudflare Pages, which already serves `index.html` for unknown paths as long as
+there is no top-level `404.html`, so deep links work without a `_redirects` file.
+
 
 - [ ] No `netlify.toml`, `vercel.json`, or `public/_redirects` exists. `BrowserRouter` needs
       the host to rewrite unknown paths to `index.html`; without it, opening
@@ -133,7 +140,7 @@ WhatsApp. [index.html](index.html) currently has a `<title>` and nothing else.
       styled `<a>`.
 - [ ] Carousel arrows in [CarouselWrapper.jsx:57-69](src/components/CarouselWrapper.jsx#L57-L69)
       have no `aria-label` (the pagination dots below correctly do).
-- [ ] The `heroBoyGirl` image at [Hero.jsx:35-38](src/components/Hero.jsx#L35-L38) has no `alt`.
+- [x] The `heroBoyGirl` image at [Hero.jsx:35-38](src/components/Hero.jsx#L35-L38) has no `alt`.
 
 ## 7. Smaller items
 

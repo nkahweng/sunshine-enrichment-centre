@@ -34,6 +34,7 @@ const Hero = () => {
                 ENRICHMENT CENTRE
                 <img
                   src={heroBoyGirl}
+                  alt=""
                   className="absolute -top-6 w-14 -right-12 md:-top-12 md:w-24"
                 />
               </span>
