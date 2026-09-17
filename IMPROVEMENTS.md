@@ -5,7 +5,7 @@ Audit of the site as of 2026-09-12 (commit `bb67d24`). Findings are grounded in 
 
 ---
 
-## 1. The build ships ~85 MB of media
+## 1. The build ships ~85 MB of media — done
 
 The single biggest problem. `npm run build` reports a healthy 371 kB JS bundle — and then
 this next to it:
@@ -67,25 +67,25 @@ Shipped: **1080p, CRF26 + denoise, 15.000s frame-exact → 5.77 MB** (from 19.9 
 - [x] Also fixed on the same element: added `playsInline` (iOS Safari refused inline autoplay
       without it), and `className="w-full h-auto block"` — it previously had no sizing at all
       and rendered at intrinsic video size.
-- [ ] Optional further win: trimming below 15s, or revisiting unbranded hosting (Vimeo /
+- [x] ~~Optional further win~~ (not pursuing): trimming below 15s, or revisiting unbranded hosting (Vimeo /
       Cloudflare Stream / Bunny.net) if the client's objection was to YouTube's branding
       specifically rather than to external hosting.
 
-## 2. Three real bugs
+## 2. Three real bugs — done
 
-- [ ] **[Gallery.jsx:77](src/components/Gallery.jsx#L77) — `koading="lazy"`** should be
+- [x] **[Gallery.jsx:77](src/components/Gallery.jsx#L77) — `koading="lazy"`** should be
       `loading="lazy"`. The typo means the 3.8 MB `trip3.jpg` loads eagerly while its five
       siblings lazy-load.
-- [ ] **[Video.jsx:19-24](src/components/Video.jsx#L19-L24) — missing `playsInline`.** iOS
+- [x] **[Video.jsx:19-24](src/components/Video.jsx#L19-L24) — missing `playsInline`.** iOS
       Safari refuses inline autoplay without it and either hijacks to fullscreen or doesn't
       play at all. The element also has no `className`, so it renders at intrinsic video size
       instead of fitting its section.
-- [ ] **No catch-all route** in [App.jsx:19-35](src/App.jsx#L19-L35). A mistyped URL matches
+- [x] **No catch-all route** in [App.jsx:19-35](src/App.jsx#L19-L35). A mistyped URL matches
       nothing, so React Router renders *nothing* — not even navbar and footer, since the
       `Layout` parent only renders when a child matches. Blank white page. Add
       `<Route path="*" element={<NotFound />} />`.
 
-## 3. `npm run lint` fails — 41 errors
+## 3. `npm run lint` fails — 41 errors (36 remaining)
 
 - [ ] Remove unused imports: the `Navbar`/`Footer` imports in every page file (`Layout`
       already renders them), leftover `useState`/`useRef`/`useEffect`, unused asset imports.
@@ -102,7 +102,7 @@ Shipped: **1080p, CRF26 + denoise, 15.000s frame-exact → 5.77 MB** (from 19.9 
       scroll event**. Moving `lastScrollY` to a `useRef` makes it one listener for the
       component's life.
 
-## 4. SEO and link previews
+## 4. SEO and link previews — done
 
 High value here specifically, because the primary channel is people sharing the link over
 WhatsApp. [index.html](index.html) currently has a `<title>` and nothing else.
@@ -119,13 +119,12 @@ WhatsApp. [index.html](index.html) currently has a `<title>` and nothing else.
   Done: per-route titles/descriptions/canonicals, built into static HTML per route (see
   CLAUDE.md "SEO / `<head>`").
 
-## 5. Deployment will break on deep links
+## 5. Deployment will break on deep links — not an issue
 
 Hosted on Cloudflare Pages, which already serves `index.html` for unknown paths as long as
 there is no top-level `404.html`, so deep links work without a `_redirects` file.
 
-
-- [ ] No `netlify.toml`, `vercel.json`, or `public/_redirects` exists. `BrowserRouter` needs
+- [x] No `netlify.toml`, `vercel.json`, or `public/_redirects` exists. `BrowserRouter` needs
       the host to rewrite unknown paths to `index.html`; without it, opening
       `/programs/robotics-steam` directly — or refreshing while on it — returns a 404 from the
       host. The exact config depends on where this is hosted. Needed before the next deploy.
