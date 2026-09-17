@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 export const useNavbar = () => {
   const { pathname } = useLocation();
   const [isVisible, setIsVisible] = useState(true);
   const [isTransparent, setIsTransparent] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  // A ref, not state: it changes on every scroll event and nothing renders it.
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const controlNavbar = () => {
@@ -17,24 +18,24 @@ export const useNavbar = () => {
       }
 
       // if actually got scroll
-      if (currentScrollY != lastScrollY) {
-        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      if (currentScrollY != lastScrollY.current) {
+        if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
           // Scroll down
           setIsVisible(false);
-        } else if (currentScrollY < lastScrollY) {
+        } else if (currentScrollY < lastScrollY.current) {
           // Scroll up
           setIsVisible(true);
         }
       }
 
-      setLastScrollY(currentScrollY);
+      lastScrollY.current = currentScrollY;
     };
 
     controlNavbar();
 
     window.addEventListener("scroll", controlNavbar);
     return () => window.removeEventListener("scroll", controlNavbar);
-  }, [pathname, lastScrollY]);
+  }, [pathname]);
 
   return { isVisible, isTransparent };
 };
