@@ -122,17 +122,21 @@ const Navbar = () => {
 
           {/* Mobile Menu */}
           <div className="md:hidden">
-            {!isOpenNav ? (
-              <Menu
-                className={`w-6 h-6 ${isTransparent ? "text-white" : "text-darkblue"}`}
-                onClick={() => setIsOpenNav(true)}
-              />
-            ) : (
-              <X
-                className="w-6 h-6 text-darkblue"
-                onClick={() => setIsOpenNav(false)}
-              />
-            )}
+            <button
+              type="button"
+              onClick={() => setIsOpenNav(!isOpenNav)}
+              aria-label={isOpenNav ? "Close menu" : "Open menu"}
+              aria-expanded={isOpenNav}
+              className="flex p-1"
+            >
+              {!isOpenNav ? (
+                <Menu
+                  className={`w-6 h-6 ${isTransparent ? "text-white" : "text-darkblue"}`}
+                />
+              ) : (
+                <X className="w-6 h-6 text-darkblue" />
+              )}
+            </button>
           </div>
         </div>
 
@@ -218,7 +222,7 @@ const Navbar = () => {
                 About
               </NavLink>
               <CTAButton
-                className="mt-2 flex justify-center"
+                className="mt-2 justify-center"
                 text="Contact Us"
                 icon={<MessageCircle size={15} />}
               />

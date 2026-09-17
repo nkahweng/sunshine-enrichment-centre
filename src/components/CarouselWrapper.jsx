@@ -56,6 +56,7 @@ const CarouselWrapper = ({
     <div className="relative w-full">
       <button
         onClick={scrollPrev}
+        aria-label="Previous slide"
         className={`absolute left-0 lg:-left-12 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white shadow-lg hover:bg-orange hover:text-white transition-all items-center justify-center border border-gray-100`}
       >
         <ChevronLeft size={24} />
@@ -63,6 +64,7 @@ const CarouselWrapper = ({
 
       <button
         onClick={scrollNext}
+        aria-label="Next slide"
         className={`absolute right-0 lg:-right-12 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white shadow-lg hover:bg-orange hover:text-white transition-all items-center justify-center border border-gray-100`}
       >
         <ChevronRight size={24} />
