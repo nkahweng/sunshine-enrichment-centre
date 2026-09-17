@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { headerLogo } from "../assets";
 import { NavLink, useLocation } from "react-router-dom";
 import CTAButton from "./CTAButton";
@@ -11,7 +11,11 @@ const Navbar = () => {
   const isProgramActive = location.pathname.startsWith("/programs");
 
   const { isVisible, isTransparent } = useNavbar();
-  const [isOpenNav, setIsOpenNav] = useState(false);
+  // The path the mobile menu was opened on; navigating away closes it.
+  const [menuOpenedAt, setMenuOpenedAt] = useState(null);
+  const isOpenNav = menuOpenedAt === location.pathname;
+  const setIsOpenNav = (open) =>
+    setMenuOpenedAt(open ? location.pathname : null);
   const [programOpen, setProgramOpen] = useState(false);
   const navLinkClass = ({ isActive }) =>
     `transition-colors p-4 cursor-pointer hover:-translate-y-0.5 hover:text-orange ${
@@ -31,10 +35,6 @@ const Navbar = () => {
     `transition-colors p-2 cursor-pointer ${
       isActive ? "text-orange" : "text-darkblue hover:text-orange"
     }`;
-
-  useEffect(() => {
-    setIsOpenNav(false);
-  }, [location.pathname]);
 
   return (
     // fix on top
