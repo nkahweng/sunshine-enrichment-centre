@@ -258,12 +258,12 @@ const Benefits = () => {
             </h2>
             {/* Desc */}
             <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-12 animate-on-scroll animate-slide-right delay-200">
-              Sunshine Enrichment Centre isn’t just a place for learning, it’s a
+              Sunshine Enrichment Centre isn’t just a place for learning, it’s a
               space where dreams come alive. Established with a heart full of
               passion, our mission is to help children grow into confident,
               curious, and creative individuals. We located in the cozy town
-              of Simpang Renggam, Johor, our centre offers a wide range of
-              programs designed to suit every child’s unique interests. 
+              of Simpang Renggam, Johor, our centre offers a wide range of
+              programs designed to suit every child’s unique interests. 
             </p>
 
             {/* Benefit points */}

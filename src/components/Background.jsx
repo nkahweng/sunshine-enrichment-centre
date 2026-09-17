@@ -61,7 +61,7 @@ const Background = () => {
               <p>
                 Sunshine Enrichment Centre aim to become synonymous with joyful,
                 play driven learning where to empower every child to meet
-                challenges with confident, creative, and resilience. We envision
+                challenges with confident, creative, and resilience. We envision
                 a future where education goes beyond textbooks. Where play,
                 hands-on experiences, and innovation ignite curiosity, unlock
                 potential, and prepare children for success in an ever-changing
