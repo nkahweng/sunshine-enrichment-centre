@@ -1,16 +1,23 @@
 import "./App.css";
+import { lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import LearningClass from "./pages/Programs/LearningClass";
-import StrengtheningClass from "./pages/Programs/StrengtheningClass";
-import RoboticsSTEAM from "./pages/Programs/RoboticsSTEAM";
-import PictureBook from "./pages/Programs/PictureBook";
-import ArtCraft from "./pages/Programs/ArtCraft";
 import Layout from "./components/Layout";
 import ScrollToTop from "./components/ScrollToTop";
-import EnglishEnrichment from "./pages/Programs/EnglishEnrichment";
 import NotFound from "./pages/NotFound";
+
+// Program pages are split into their own chunks; Layout provides the Suspense boundary.
+const LearningClass = lazy(() => import("./pages/Programs/LearningClass"));
+const StrengtheningClass = lazy(
+  () => import("./pages/Programs/StrengtheningClass"),
+);
+const RoboticsSTEAM = lazy(() => import("./pages/Programs/RoboticsSTEAM"));
+const PictureBook = lazy(() => import("./pages/Programs/PictureBook"));
+const ArtCraft = lazy(() => import("./pages/Programs/ArtCraft"));
+const EnglishEnrichment = lazy(
+  () => import("./pages/Programs/EnglishEnrichment"),
+);
 
 function App() {
   return (

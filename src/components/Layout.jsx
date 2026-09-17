@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
@@ -10,7 +10,10 @@ const Layout = () => {
     <>
       <Navbar />
       <main className="">
-        <Outlet />
+        {/* min-h keeps the footer from flashing up while a lazy page loads */}
+        <Suspense fallback={<div className="min-h-screen" />}>
+          <Outlet />
+        </Suspense>
       </main>
       <Footer />
     </>
