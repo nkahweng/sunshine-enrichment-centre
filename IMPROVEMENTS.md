@@ -85,7 +85,7 @@ Shipped: **1080p, CRF26 + denoise, 15.000s frame-exact → 5.77 MB** (from 19.9 
       `Layout` parent only renders when a child matches. Blank white page. Add
       `<Route path="*" element={<NotFound />} />`.
 
-## 3. `npm run lint` fails — 41 errors — done (only `Slider.jsx` still fails)
+## 3. `npm run lint` fails — 41 errors — done, lint is clean
 
 - [x] Remove unused imports: the `Navbar`/`Footer` imports in every page file (`Layout`
       already renders them), leftover `useState`/`useRef`/`useEffect`, unused asset imports.
@@ -144,9 +144,9 @@ there is no top-level `404.html`, so deep links work without a `_redirects` file
 
 ## 7. Smaller items
 
-- [ ] `src/components/Slider.jsx` is untracked and looks like a scratch experiment — dummy
+- [x] `src/components/Slider.jsx` is untracked and looks like a scratch experiment — dummy
       `"one"/"two"/"three"` content, duplicating `CarouselWrapper`, with dead framer-motion
-      imports. Delete it or finish it.
+      imports. Delete it or finish it. *(Deleted.)*
 - [x] Route-level `React.lazy` would split the six program pages out of the main bundle.
       Modest next to the images, but easy.
 - [x] `src/assets/index.js` imports `facebook.svg?react`, but `vite-plugin-svgr` is not
