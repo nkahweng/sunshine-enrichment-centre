@@ -27,9 +27,6 @@ import trip6 from "./trip6.webp";
 
 import student from "./student.webp";
 
-import FacebookIcon from "./icons/facebook.svg?react";
-import instagram from "./icons/instagram.svg";
-import whatsapp from "./icons/whatsapp.svg";
 import xhs from "./xhs_logo.webp";
 
 import mrChew from "./Mr. Chew.webp";
@@ -71,4 +68,4 @@ export {
   heroBg,
   heroBoyGirl,
 };
-export { FacebookIcon, instagram, whatsapp, xhs };
+export { xhs };

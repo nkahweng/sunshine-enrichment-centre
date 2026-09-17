@@ -51,5 +51,4 @@ Mobile responsiveness matters here (much of the recent commit history is mobile 
 
 ## Gotchas
 
-- `src/assets/index.js` imports `facebook.svg?react`, but `vite-plugin-svgr` is not installed — that import yields a URL string, not a component. `FacebookIcon` is exported but currently unused.
 - `dist/` exists on disk and is gitignored; don't edit or commit it.
