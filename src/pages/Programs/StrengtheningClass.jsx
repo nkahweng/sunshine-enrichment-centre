@@ -1,7 +1,5 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
 import ProgramHero from "../../components/ProgramHero";
-import Footer from "../../components/Footer";
 import { strengthening } from "../../assets";
 import CTAButton from "../../components/CTAButton";
 import { MessageCircle } from "lucide-react";

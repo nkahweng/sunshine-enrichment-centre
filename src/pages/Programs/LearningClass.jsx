@@ -71,7 +71,7 @@ const LearningClass = () => {
                     Subjects Covered
                   </h3>
                   <div className="flex flex-wrap gap-4">
-                    {subjects.map((subject, index) => (
+                    {subjects.map((subject) => (
                       <span
                         key={subject.title}
                         className={`rounded-full text-white px-6 py-2 text-sm font-medium ${subject.color} animate-on-scroll animate-pop-up`}

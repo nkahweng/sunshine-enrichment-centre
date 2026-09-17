@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { children, children2, groupPhoto } from "../assets";
+import { children } from "../assets";
 import {
   Balloon,
   ShieldCheck,

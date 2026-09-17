@@ -1,8 +1,6 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
 import ProgramHero from "../../components/ProgramHero";
-import Footer from "../../components/Footer";
-import { picturebook, strengthening } from "../../assets";
+import { picturebook } from "../../assets";
 import CTAButton from "../../components/CTAButton";
 import { MessageCircle } from "lucide-react";
 import { useScrollObserver } from "../../hooks/useScrollObserver";

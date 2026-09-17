@@ -1,5 +1,4 @@
 import React from "react";
-import { robotics, robotics2 } from "../assets";
 
 const ProgramHero = ({
   title,

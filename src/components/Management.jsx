@@ -17,8 +17,10 @@ const Management = () => {
 
           {/* Management Card */}
           <div className="grid md:grid-cols-2 gap-12 md:gap-20 max-w-3xl">
-            {managements.map((management, index) => (
-              <div className="rounded-3xl shadow-md overflow-hidden bg-[#ffffff] hover:-translate-y-2 transition-all duration-500 animate-on-scroll animate-fade-up delay-200">
+            {managements.map((management) => (
+              <div
+                key={management.name}
+                className="rounded-3xl shadow-md overflow-hidden bg-[#ffffff] hover:-translate-y-2 transition-all duration-500 animate-on-scroll animate-fade-up delay-200">
                 <img
                   src={management.imagePath}
                   alt={management.alt}

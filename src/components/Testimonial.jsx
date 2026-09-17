@@ -1,10 +1,7 @@
-import { useCallback, useEffect, useRef, useState } from "react";
 import { testimonials } from "../constants";
-import { motion } from "framer-motion";
 import { useScrollObserver } from "../hooks/useScrollObserver";
 import TestimonialCard from "./TestimonialCard";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import CarouselWrapper from "./CarouselWrapper";
 

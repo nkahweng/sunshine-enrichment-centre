@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from "react";
-import ProgramCard from "./ProgramCard";
+import React from "react";
 import { programs } from "../constants";
 import { ChevronRight } from "lucide-react";
 import { useScrollObserver } from "../hooks/useScrollObserver";
@@ -33,7 +32,7 @@ const Programs = () => {
         {/* Programs */}
         <div className="">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-14">
-            {programs.map((program, index) => (
+            {programs.map((program) => (
               <div
                 key={program.title}
                 className="group bg-white rounded-3xl font-montserrat shadow-lg relative hover:-translate-y-3 transition-all duration-500 hover:shadow-2xl flex flex-col animate-on-scroll animate-fade-up"

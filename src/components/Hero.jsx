@@ -1,6 +1,6 @@
 import React from "react";
 import { MessageCircle, Sun } from "lucide-react";
-import { group, heroBg, heroBoyGirl, trip6 } from "../assets";
+import { heroBg, heroBoyGirl } from "../assets";
 import CTAButton from "./CTAButton";
 import { useScrollObserver } from "../hooks/useScrollObserver";
 
